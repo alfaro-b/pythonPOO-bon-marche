@@ -1,7 +1,9 @@
-Exercice Python POO : Au bon marché 
+# Exercice Python POO : Au bon marché 
 
 « Au bon marché » est un primeur vendant des fruits et légumes de saison, à la pièce ou au kilo. Le 
 tableau suivant recense le stock et les différents prix début janvier 2025. 
+
+![Capture d'écran](capture_ecran.png)
 
 Le programme a pour but de permettre aux clients de la journée de faire leurs achats en choisissant 
 les fruits et légumes souhaités (et leur quantité). 
