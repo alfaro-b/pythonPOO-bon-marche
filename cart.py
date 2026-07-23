@@ -15,11 +15,12 @@ class Cart:
 
     def add_product(self, product: Product, quantity: float) -> None:
         """
-        Ajoute un produit au panier.
-        :param product: Produit à ajouter.
+        Ajoute un produit et sa quantité au panier.
+        :param product: Produit à ajouter au panier.
         :param quantity: Quantité souhaitée.
         """
-        pass
+        cart_item = CartItem(product, quantity)
+        self.items.append(cart_item)
 
     def total(self) -> float:
         """
