@@ -11,16 +11,16 @@ class Product:
     # ---------------------Methods---------------------
     """
     Enlève une quantité du stock
-    @:param: stock : le stock du produit
-    @:param: quantity : la quantité du produit à enlever
+    @:param stock: le stock du produit
+    @:param quantity: la quantité du produit à enlever
     """
     def remove_from_stock(self, quantity) -> None:
         self.stock -= quantity
 
     """
     Ajoute une quantité au stock
-    @:param: stock : le stock du produit
-    @:param: quantity : la quantité du produit à ajouter
+    @:param stock: le stock du produit
+    @:param quantity: la quantité du produit à ajouter
     """
 
     def add_to_stock(self, stock, quantity):
