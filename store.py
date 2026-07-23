@@ -1,4 +1,5 @@
 from customer import Customer
+from product import Product
 
 
 class Store:
@@ -15,7 +16,7 @@ class Store:
     :return: retourne le produit s'il existe sinon retourne None
     """
 
-    def search_product(self, product_name) -> Product:
+    def search_product(self, product_name) -> Product | None:
         for product in self.products:
             name_of_product_in_store = product.name.lower()
             name_of_product_given_by_customer = product_name.lower()
