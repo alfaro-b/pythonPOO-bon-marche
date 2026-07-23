@@ -5,12 +5,18 @@ from customer import Customer
 
 
 class Store:
-
+    """
+    Représente un magasin avec ses produits et sa clientèle
+    """
     # --------------------variables-------------------------
     products = []
     customers = []
 
     # ---------------------Methods---------------------------
+    """
+    Recherche d'un produit dans la liste des produits par son nom avec homogénéisation de la casse.
+    :return: retourne le produit s'il existe sinon retourne None
+    """
     def search_product(self, product_name):
         for product in self.products:
             name_of_product_in_store = product.name.lower()
@@ -18,12 +24,6 @@ class Store:
             if name_of_product_in_store == name_of_product_given_by_customer:
                 return product
         return None
-
-    # -------------------Constructor-------------------------
-
-    def __init__(self, products, customers):
-        self.products = products
-        self.customers = customers
 
     def display_products(self) -> None:
         """
@@ -37,3 +37,12 @@ class Store:
                 f"{product.price:.2f} €/{product.unity} - "
                 f"Stock : {product.stock} {product.unity}"
             )
+
+    # -------------------Constructor-------------------------
+    """
+    Constructeur avec tous les paramètres
+    """
+    def __init__(self, products, customers):
+        self.products = products
+        self.customers = customers
+
