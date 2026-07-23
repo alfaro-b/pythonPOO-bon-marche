@@ -20,4 +20,13 @@ class Cart:
         :param quantity: Quantité souhaitée.
         """
         pass
-    
+
+    def total(self):
+        """
+        Calcule le montant du panier.
+        :return: Montant total du panier.
+        """
+        cart_total: float = 0.0
+        for item in self.items:
+            cart_total += item.subtotal()
+        return cart_total
