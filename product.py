@@ -9,6 +9,10 @@ class Product:
         self.stock = stock - unity
         return self.stock
 
+    def add_to_stock(self, stock, unity):
+        self.stock = stock + unity
+        return self.stock
+
     # -------------------Constructor--------------------
 
 
