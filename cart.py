@@ -12,7 +12,6 @@ class Cart:
         Initialise un panier vide.
         """
         self.items: list[CartItem] = []
-        # TODO : créer la classe CartItem et l'importer
 
     def add_product(self, product: Product, quantity: float) -> None:
         """
@@ -37,7 +36,10 @@ class Cart:
         Affiche le contenu du panier et son montant total.
         """
         for item in self.items:
-            print(item.product.name)
-            print(f"{item.product.quantity} x {item.product.price}€")
-            print(f"{item.subtotal()}€")
-        print(f"Total : {self.total()}€")
+            print(
+                f"{item.product.name} : "
+                f"{item.quantity} x {item.product.price:.2f} € "
+                f"= {item.subtotal():.2f} € "
+            )
+        # :.2f permet d'avoir un affichage avec 2 décimales
+        print(f"Total : {self.total():.2f} €")
