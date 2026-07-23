@@ -7,11 +7,6 @@ class Customer:
     représente un client.
     """
 
-    # -------------------------Variables----------------------
-
-    first_name = ''
-    last_name = ''
-
     # --------------------------Methods---------------------
 
     """
@@ -19,7 +14,7 @@ class Customer:
     :return : la nom complet du client.
     """
     def get_full_name(self):
-        return self.first_name + ' ' + self.last_name
+        return f"{self.first_name} {self.last_name}"
 
     # ------------------------Constructor-------------------
 
