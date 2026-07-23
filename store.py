@@ -11,7 +11,7 @@ class Store:
     customers = []
 
     # ---------------------Methods---------------------------
-    def search_product(self, product_name):
+    def search_product(self, product_name) -> Product:
         for product in self.products:
             name_of_product_in_store = product.name.lower()
             name_of_product_given_by_customer = product_name.lower()
@@ -37,3 +37,37 @@ class Store:
                 f"{product.price:.2f} €/{product.unity} - "
                 f"Stock : {product.stock} {product.unity}"
             )
+
+    def sell_product(self, customer: Customer) -> None:
+        """
+        Vend un produit à un client.
+        Affiche les produits, demande le produit et la quantité,
+        vérifie la disponibilité du stock, met à jour le stock et
+        ajoute le produit au panier client.
+        :param customer: Client qui effectue l'achat
+        """
+        self.display_products()
+
+        product_name = input("Quel produit souhaitez-vous acheter? ")
+        # Recherche du produit demandé par le client
+        product = self.search_product(product_name)
+        # Vérifie si le produit existe
+        if product is None:
+            print("Veuillez choisir un produit disponible.")
+            return
+
+        quantity = float(input(f"Quelle quantité de {product.name} souhaitez-vous acheter? "))
+        # Vérifie que la quantité saisie est valide
+        if quantity <= 0:
+            print("La quantité doit être supérieure à zéro.")
+            return
+        # Vérifie que le stock est suffisant
+        if quantity > product.stock:
+            print(
+                f"Il ne reste pas assez de {product.name}. "
+                f"Stock disponible : {product.stock} {product.unity}."
+            )
+            return
+        # Met à jour le stock puis ajoute le produit au panier
+        product.remove_from_stock(quantity)
+        customer.cart.add_product(product, quantity)
