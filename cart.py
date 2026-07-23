@@ -13,7 +13,7 @@ class Cart:
         self.items: list[CartItem] = []
         # TODO : créer la classe CartItem et l'importer
 
-    def add_product(self, product: Product, quantity: float):
+    def add_product(self, product: Product, quantity: float) -> None:
         """
         Ajoute un produit au panier.
         :param product: Produit à ajouter.
@@ -21,7 +21,7 @@ class Cart:
         """
         pass
 
-    def total(self):
+    def total(self) -> float:
         """
         Calcule le montant du panier.
         :return: Montant total du panier.
@@ -30,3 +30,13 @@ class Cart:
         for item in self.items:
             cart_total += item.subtotal()
         return cart_total
+
+    def display(self) -> None:
+        """
+        Affiche le contenu du panier et son montant total.
+        """
+        for item in self.items:
+            print(item.product.name)
+            print(f"{item.product.quantity} x {item.product.price}€")
+            print(f"{item.subtotal()}€")
+        print(f"Total : {self.total()}€")
