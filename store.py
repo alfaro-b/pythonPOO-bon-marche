@@ -1,6 +1,3 @@
-from enum import nonmember
-
-from product import Product
 from customer import Customer
 
 
@@ -37,6 +34,16 @@ class Store:
                 f"{product.price:.2f} €/{product.unity} - "
                 f"Stock : {product.stock} {product.unity}"
             )
+    """
+    Création d'un nouveau client et ajout dans la liste des clients du magasin.
+    :param prénom_client: prénom du client
+    :param nom_client : nom du client
+    :return: client
+    """
+    def create_customer(self, customer_first_name, customer_last_name):
+        customer = Customer(customer_first_name, customer_last_name)
+        self.customers.append(customer)
+        return customer
 
     # -------------------Constructor-------------------------
     """
@@ -45,4 +52,3 @@ class Store:
     def __init__(self, products, customers):
         self.products = products
         self.customers = customers
-
