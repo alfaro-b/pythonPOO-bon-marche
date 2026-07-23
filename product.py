@@ -13,6 +13,9 @@ class Product:
         self.stock = stock + unity
         return self.stock
 
+    def is_available(self):
+        return self.stock > 0
+
     # -------------------Constructor--------------------
 
 
