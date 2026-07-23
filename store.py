@@ -36,12 +36,14 @@ class Store:
                 f"{product.price:.2f} €/{product.unity} - "
                 f"Stock : {product.stock} {product.unity}"
             )
+
     """
     Création d'un nouveau client et ajout dans la liste des clients du magasin.
     :param prénom_client: prénom du client
     :param nom_client : nom du client
     :return: client
     """
+
     def create_customer(self, customer_first_name, customer_last_name):
         customer = Customer(customer_first_name, customer_last_name)
         self.customers.append(customer)
@@ -81,10 +83,33 @@ class Store:
         product.remove_from_stock(quantity)
         customer.cart.add_product(product, quantity)
 
+    def daily_report(self) -> None:
+        """
+        Affiche le bilan de la journée :
+        affiche la liste des clients avec le montant de leurs achats
+        et le stock restant de chaque produit.
+        """
+        print("----- Clients -----")
+
+        for customer in self.customers:
+            print(
+                f"- {customer.get_full_name()} : "
+                f"{customer.cart.total():.2f} € "
+            )
+
+        print("\n----- Stock restant -----")
+
+        for product in self.products:
+            print(
+                f"- {product.name} : "
+                f"{product.stock:.2f} {product.unity} "
+            )
+
     # -------------------Constructor-------------------------
     """
     Constructeur avec tous les paramètres
     """
+
     def __init__(self, products, customers):
         self.products = products
         self.customers = customers
