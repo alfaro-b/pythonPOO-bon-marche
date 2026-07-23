@@ -14,3 +14,10 @@ class CartItem:
         """
         self.product: Product = product
         self.quantity: float = quantity
+
+    def subtotal(self) -> float:
+        """
+        Calcule le sous-total d'une ligne du panier.
+        :return: Montant total de cette ligne du panier.
+        """
+        return self.product.price * self.quantity
