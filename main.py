@@ -5,11 +5,29 @@ from store import Store
 
 
 def main() -> None:
+    UNITY_PIECE = "pièces"
+    UNITY_KG = "kg"
     products = [
-        Product("Clémentine", 2.90, 6, "kg"),
-        Product("Datte", 7, 4, "kg"),
-        Product("Grenade", 3.50, 3, "kg"),
-        Product("Kaki", 4.50, 3, "kg"),
+        Product("Clémentine", 2.9, 6, UNITY_KG),
+        Product("Datte", 7, 4, UNITY_KG),
+        Product("Grenade", 3.5, 3, UNITY_KG),
+        Product("Kaki", 4.5, 3, UNITY_KG),
+        Product("Kiwi", 3.5, 5, UNITY_KG),
+        Product("Mandarine", 2.8, 6, UNITY_KG),
+        Product("Orange", 4.5, 3, UNITY_KG),
+        Product("Pamplemousse", 2, 8, UNITY_PIECE),
+        Product("Poire", 2.5, 5, UNITY_KG),
+        Product("Pomme", 1.5, 8, UNITY_KG),
+        Product("Carotte", 1.3, 7, UNITY_KG),
+        Product("Choux de Bruxelles", 4, 4, UNITY_KG),
+        Product("Chou vert", 2.5, 12, UNITY_PIECE),
+        Product("Courge butternut", 2.5, 6, UNITY_PIECE),
+        Product("Endive", 2.5, 5, UNITY_KG),
+        Product("Épinard", 2.6, 4, UNITY_KG),
+        Product("Poireau", 1.2, 5, UNITY_KG),
+        Product("Potiron", 2.5, 6, UNITY_PIECE),
+        Product("Radis noir", 5, 10, UNITY_PIECE),
+        Product("Salsifis", 2.5, 3, UNITY_KG)
     ]
     customers = []
     store = Store(products, customers)
