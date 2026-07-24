@@ -23,8 +23,20 @@ def main() -> None:
         choice = input("Votre choix : ")
 
         if choice == "1":
-            pass
-            # à faire
+            # Création du client
+            first_name = input("Prénom du client : ")
+            last_name = input("Nom du client : ")
+            customer = store.create_customer(first_name, last_name)
+
+            # Constitution du panier
+            add_a_product = "o"
+            while add_a_product == "o":
+                store.sell_product(customer)
+                add_a_product = input("Souhaitez-vous ajouter un nouveau produit? (o/n) ").lower()
+
+            # Affichage du ticket de caisse
+            print("\n-----Ticket de caisse-----")
+            customer.cart.display()
 
         elif choice == "2":
             store.daily_report()
