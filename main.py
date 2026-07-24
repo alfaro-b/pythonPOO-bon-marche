@@ -50,7 +50,12 @@ def main() -> None:
             add_a_product = "o"
             while add_a_product == "o":
                 store.sell_product(customer)
+
                 add_a_product = input("Souhaitez-vous ajouter un nouveau produit? (o/n) ").lower()
+
+                while add_a_product not in ("o", "n"):
+                    print("Merci de répondre par 'o' ou 'n'.")
+                    add_a_product = input("Souhaitez-vous ajouter un nouveau produit? (o/n) ").lower()
 
             # Affichage du ticket de caisse
             print("\n-----Ticket de caisse-----")
