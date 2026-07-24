@@ -36,13 +36,13 @@ def main() -> None:
         print("\n----- Au bon marché -----")
         print("1. Nouveau client")
         print("2. Bilan de la journée")
-        print("3. Quitter")
+        print("3. Quitter (Fermeture du magasin)\n")
 
         choice = input("Votre choix : ")
 
         if choice == "1":
             # Création du client
-            first_name = input("Prénom du client : ")
+            first_name = input("\nPrénom du client : ")
             last_name = input("Nom du client : ")
             customer = store.create_customer(first_name, last_name)
 

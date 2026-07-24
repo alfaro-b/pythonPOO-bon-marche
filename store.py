@@ -28,6 +28,7 @@ class Store:
         """
         Affiche les produits du magasin.
         """
+        print("\n")
         # enumerate permet de parcourir la liste en récupérant l'indice (à partir de 1) et le produit
         for index, product in enumerate(self.products, start=1):
             print(
@@ -59,7 +60,7 @@ class Store:
         """
         self.display_products()
 
-        product_name = input("Quel produit souhaitez-vous acheter? ")
+        product_name = input("\nSaisissez le nom du produit que vous souhaitez acheter? ")
         # Recherche du produit demandé par le client
         product = self.search_product(product_name)
         # Vérifie si le produit existe
